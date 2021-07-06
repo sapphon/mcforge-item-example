@@ -12,7 +12,7 @@ public class ItemRegisterer {
 
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event){
-        Item a_new_bat = new Item().setRegistryName(ANewBatMod.MODID, "a_new_bat").setUnlocalizedName("anewbat.a_new_bat").setCreativeTab(CreativeTabs.MISC);
+        Item a_new_bat = new ItemSword(Item.ToolMaterial.DIAMOND).setRegistryName(ANewBatMod.MODID, "a_new_bat").setUnlocalizedName("anewbat.a_new_bat").setCreativeTab(CreativeTabs.MISC);
         event.getRegistry().register(a_new_bat);
     }
 }
