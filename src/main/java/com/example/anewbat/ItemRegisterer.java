@@ -6,6 +6,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemSword;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -13,7 +14,8 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 @Mod.EventBusSubscriber(modid=ANewBatMod.MODID)
 public class ItemRegisterer {
 
-    private static final Item a_new_bat = new ItemSword(Item.ToolMaterial.DIAMOND).setRegistryName(ANewBatMod.MODID, "a_new_bat").setUnlocalizedName("a_new_bat").setCreativeTab(CreativeTabs.MISC);
+    private static Item.ToolMaterial aNewToolMaterial = EnumHelper.addToolMaterial("bricks", 3, 1001, 10f, 100, 8);
+    private static final Item a_new_bat = new ItemSword(aNewToolMaterial).setRegistryName(ANewBatMod.MODID, "a_new_bat").setUnlocalizedName("a_new_bat").setCreativeTab(CreativeTabs.MISC);
 
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event){
